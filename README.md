@@ -51,3 +51,9 @@
 - 로그파일
   - 저장경로: ${SCOUTER_HOME}/server/database
   - 한달이 넘거나 서버 디스크의 70%이상이면 가장 오래된로그부터 지운다.
+
+- 스카우터 실행
+  - /scouter/server/start.bat 실행하여 스카우트 서버 실행
+  - /scouter/agent.host/host.bat 실행하여 host agent 실행
+  - intellij vm optrions또는 tomcat server.xml에 -javaagent:"C:\scouter\agent.java\conf\scouter.agent.jar" -Dscouter.config="C:\scouter\agent.java\conf\scouter.conf" -Dobj_name=scouterapptestWeb 추가
+  - 스카우터 클라이언트 실행 admin/admin
