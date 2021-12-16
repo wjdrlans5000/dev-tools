@@ -35,7 +35,7 @@
   - Heap Memory : Heap used 와 함께 Max 사용가능한 수치도 같이 볼수 있다.
   - ProcessCpu : JVM CPU 사용
   - Recent User : 최근(새로운)사용자. 믿기 어렵다. 구글 애널리틱스를 쓰자. 스카우터 쿠키를 구워서 다음에 왔을땐 새로운게 아니니까.. 믿지말자..
-  - TPS : CPU사용량과 밀접한 관계가 있다.
+  - TPS : 트랜잭션 퍼 세컨드 (초당트랜잭션) CPU사용량과 밀접한 관계가 있다.
   - User Transaction : 하나의 행위(메일을쓰기, 하나의 페이지를 로딩)
   - Server Transaction : 하나의 행위를 위해 여러번 요청을 할때 각각 트랜잭션으로..
   - Active Service EQ : 쓰레드 정보. 빨간색 8초 응답, 노란색 4초 응답, 파란색은 OK
