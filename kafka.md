@@ -41,3 +41,7 @@ spring.kafka.bootstrap-servers=localhost:9092 ( 설치된 카프카 IP:PORT )
 - 컨슈머가 동일한 데이터를 중복해서 가져오는것을 방지하기 위하여 OFFSET을 커밋하여 이를 방지한다.
 - OFFSET COMMIT을 오토로 설정하지 않아 컨슈머가 로직처리중 EXCEPTION이 발생하더라도 Consumer 내부에서 Partition Offset과는 별개로 Consumer만을 위한 Offset을 관리하고 있기 때문에 무한루프에 빠지지 않는다 
 - 카프카 OFFFSET 관련 참고 URL : https://jessyt.tistory.com/167
+
+### Flink
+- 스트림 데이터를 받아 데이터를 가공하고 처리(저장)하는 스트리밍 & 배치 프로세싱 플랫폼
+- 참고 URL : https://gyrfalcon.tistory.com/entry/Flink-1-%EC%86%8C%EA%B0%9C-Basic-Concept
