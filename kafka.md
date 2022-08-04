@@ -9,6 +9,7 @@
   - https://cobajiyoung.tistory.com/68
   - https://jjjwodls.github.io/etc/2020/01/07/01-Kafka-Setup.html
   - https://jessyt.tistory.com/131?category=966697
+  - https://jaimemin.tistory.com/1901 : 관련 개념 및 모니터링 툴
 
 1) zookeeper 수행
 D:\Kafka\kafka_2.12-2.6.0\bin\windows\zookeeper-server-start.bat D:\Kafka\kafka_2.12-2.6.0\config\zookeeper.properties
@@ -45,3 +46,4 @@ spring.kafka.bootstrap-servers=localhost:9092 ( 설치된 카프카 IP:PORT )
 ### Flink
 - 스트림 데이터를 받아 데이터를 가공하고 처리(저장)하는 스트리밍 & 배치 프로세싱 플랫폼
 - 참고 URL : https://gyrfalcon.tistory.com/entry/Flink-1-%EC%86%8C%EA%B0%9C-Basic-Concept
+
