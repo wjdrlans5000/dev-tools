@@ -7,7 +7,7 @@
 ### Kafka 설치 및 개념 (producer-consumer)
 - 참고 URL
   - https://cobajiyoung.tistory.com/68
-  - https://jjjwodls.github.io/etc/2020/01/07/01-Kafka-Setup.html
+  - https://jjjwodls.github.io/etc/2020/01/07/01-Kafka-Setup.html : 윈도우 환경 카프카 설치 및 테스트
   - https://jessyt.tistory.com/131?category=966697
   - https://jaimemin.tistory.com/1901 : 관련 개념 및 모니터링 툴
 
