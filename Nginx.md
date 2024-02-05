@@ -19,4 +19,4 @@
 - Nginx에서는 이러한 connection 형성과 제거, 그리고 새로운 요청을 처리하는 것을 이벤트(event)라고 한다.
 - 이벤트들은 os커널이 queue형식으로 worker process에게 전달, 이벤트들은 queue에 담긴 상태에서 비동기 상태로 대기
 - worker process는 하나의 스레드로 이벤트를 꺼내서 처리해 나가고, 이런 방식은 worker process가 쉬지 않고 일을 하기에, 요청이 없을 때 프로세스를 방치시키는 Apache Server보다 훨씬 효율적으로 자원을 사용할 수 있다.
-- ![image](https://github.com/wjdrlans5000/dev-tools/assets/62735399/fce18c3f-9dbe-4134-9973-86bce9ec6d41)
+  ![image](https://github.com/wjdrlans5000/dev-tools/assets/62735399/fce18c3f-9dbe-4134-9973-86bce9ec6d41)
