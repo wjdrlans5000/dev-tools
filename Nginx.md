@@ -128,7 +128,7 @@ server {
 
   location / {
     include /etc/nginx/proxy_params;
-    proxy_pass http://express-app;
+    proxy_pass http://tomcat;
   }
 }
 
