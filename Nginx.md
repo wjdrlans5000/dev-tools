@@ -50,8 +50,8 @@ sudo /etc/init.d/nginx start
 # - 이 사용자에 따라 권한이 달라질 수 있다.
 user  nginx;
 # 실행할 worker 프로세스 설정
-# - 서버에 장착되어 있는 코어 수 만큼 할당하는 것이 보통, 더 높게도 설정 가능
-worker_processes  1;
+# - 서버에 장착되어 있는 코어 수 만큼 할당하는 것이 보통, 더 높게도 설정 가능, auto : 자동설정
+worker_processes  auto;
 
 # 오류 로그를 남길 파일 경로 지정
 error_log  /var/log/nginx/error.log warn;
@@ -61,6 +61,9 @@ pid        /var/run/nginx.pid;
 
 # 접속 처리에 관한 설정을 한다.
 events {
+    # epoll은 Linux에서 socket을 관리하는 데 사용하는 방식 중 하나
+    # 수천개의 file descriptor를 처리할 수 있도록 보다 효율적인 알고리즘을 사용하고 있어 대량 요청이 발생하는 시스템에 적합
+    use epoll;
     # 워커 프로레스 한 개당 동시 접속 수 지정 (512 혹은 1024 를 기준으로 지정)
     worker_connections  1024;
 }
@@ -107,6 +110,15 @@ $ systemctl start nginx
 - 로드밸런싱 설정, /etc/nginx/conf.d 디렉토리 아래 .conf 파일을 생성
 - 80 포트로 들어왔을때 upstream의 3개의 서비스로 로드밸런싱
 ```
+upstream tomcat {
+  # 로드밸런싱 방식 설정 (아무 설정을 하지 않으면 라운드 로빈 방식으로 로드밸런싱)
+  least_conn;
+
+  server 127.0.0.1:7000;
+  server 127.0.0.1:8000;
+  server 127.0.0.1:9000;
+}
+
 server {
   listen  80;
   server_name {nginx server ip 혹은 domain 설정};
@@ -118,15 +130,6 @@ server {
     include /etc/nginx/proxy_params;
     proxy_pass http://express-app;
   }
-}
-
-upstream express-app {
-  # least-connected 설정 (아무 설정을 하지 않으면 라운드 로빈 방식으로 로드밸런싱)
-  least_conn;
-
-  server 127.0.0.1:7000;
-  server 127.0.0.1:8000;
-  server 127.0.0.1:9000;
 }
 
 ```
